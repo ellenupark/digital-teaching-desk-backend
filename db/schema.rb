@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_052139) do
   enable_extension "plpgsql"
 
   create_table "contents", force: :cascade do |t|
+    t.string "subject"
     t.string "title"
     t.string "description"
     t.string "image_url", default: ""
@@ -25,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_02_18_052139) do
     t.string "tags", default: [], array: true
     t.string "tutorial_url", default: ""
     t.string "group_size"
-    t.string "age_range"
+    t.string "age_range", default: [], array: true
     t.string "complexity_level"
     t.string "resource_requirement", default: [], array: true
     t.datetime "created_at", precision: 6, null: false
